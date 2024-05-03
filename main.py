@@ -10,10 +10,10 @@ TOKEN = os.getenv('TOKEN')
 PLACE_ID = os.getenv('PLACE_ID')
 
 bot = discord.Bot("!rhstn", intents=discord.Intents.all())
-prevCCU = 0
+
 @bot.event
 async def on_ready():
-    global prevCCU
+
     print(f'{bot.user} has connected to Discord!')
     bot_channel = bot.get_channel(1236070147685486794)
     conn = http.client.HTTPSConnection('games.roblox.com')
@@ -34,9 +34,7 @@ async def on_ready():
         response = conn.getresponse()
         if response.status == 200:
             online = json.loads(response.read().decode("utf-8"))['data'][0]["playing"]
-            if online != prevCCU:
-                prevCCU = online
-                await bot_channel.edit(name = "Онлайн-"+str(online), topic = 'Suck')
+            await bot_channel.edit(name = "Онлайн-"+str(online), topic = 'Suck')
         conn.close()
     
 bot.run(str(TOKEN))
