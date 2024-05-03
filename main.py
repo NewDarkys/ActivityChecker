@@ -6,8 +6,8 @@ import discord
 from discord.ext.commands import Bot
 from dotenv import load_dotenv
 
-TOKEN = load_dotenv("TOKEN")
-PLACE_ID = load_dotenv("PLACE_ID")
+TOKEN = load_dotenv("MTA0Njk2MzE1MzQxMTUwNjIwNg.GlYAai.HoUe9egh4TfBdo-BkYPHf75TqZ2zp6iPjuzPuM")
+PLACE_ID = load_dotenv("4418074894")
 
 bot = discord.Bot("!rhstn", intents=discord.Intents.all())
 prevCCU = 0
