@@ -16,8 +16,7 @@ async def on_ready():
     global prevCCU
     print(f'{bot.user} has connected to Discord!')
     bot_channel = bot.get_channel(1236070147685486794)
-    while True:
-        conn = http.client.HTTPSConnection('games.roblox.com')
+    conn = http.client.HTTPSConnection('games.roblox.com')
         headers = {
             'accept': 'application/json, text/plain, */*',
             'accept-language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
@@ -39,6 +38,5 @@ async def on_ready():
                 prevCCU = online
                 await bot_channel.edit(name = "Онлайн-"+str(online), topic = 'Suck')
         conn.close()
-        time.sleep(10)
     
 bot.run(str(TOKEN))
