@@ -8,7 +8,7 @@ from discord.ext.commands import Bot
 
 TOKEN = os.getenv('TOKEN')
 PLACE_ID = os.getenv('PLACE_ID')
-
+print(TOKEN, PLACE_ID)
 bot = discord.Bot("!rhstn", intents=discord.Intents.all())
 
 @bot.event
